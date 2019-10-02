@@ -244,5 +244,5 @@ fi;
 if [ -x "$(command -v pg_config)" ]; then
     echo "postgresql installed"
 else
-    sudo dnf install postgresql -y
+    sudo dnf install libpqxx-devel -y
 fi;
