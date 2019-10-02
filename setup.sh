@@ -156,6 +156,9 @@ else
         https://download.docker.com/linux/fedora/docker-ce.repo
     sudo dnf install docker-ce docker-ce-cli containerd.io -y
     sudo systemctl start docker
+    sudo groupadd docker
+    sudo usermod -aG docker $ORIGINAL_USER
+    echo "For permission changes to take effect, you must log out of your computer and log back in"
 fi;
 
 # docker-compose
