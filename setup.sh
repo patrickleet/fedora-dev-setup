@@ -245,4 +245,19 @@ if [ -x "$(command -v pg_config)" ]; then
     echo "postgresql installed"
 else
     sudo dnf install libpqxx-devel -y
+    sudo dnf install nodejs-libpq -y
+fi;
+
+# gcc++
+if [ -x "$(command -v gcc)" ]; then
+    echo "gcc-c++ installed"
+else
+    sudo dnf install gcc-c++ -y
+fi;
+
+# redhat-rpm-config
+if [ -x "$(command -v dwz)" ]; then
+    echo "redhat-rpm-config installed"
+else
+    sudo dnf install redhat-rpm-config -y
 fi;
