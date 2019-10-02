@@ -18,8 +18,13 @@ read -r username
 echo "Configuring Git"
 git config --global --replace-all user.email "$email"
 git config --global --replace-all user.name "$username"
-ssh-keygen -t rsa -b 4096 -C "$email"
-eval "$(ssh-agent -s)"
+
+if [ -f "~/.ssh/id_rsa" ]; then
+    echo "SSH Key exists"
+else
+    ssh-keygen -t rsa -b 4096 -C "$email"
+    eval "$(ssh-agent -s)"
+fi
 
 sudo dnf install fedora-workstation-repositories
 
