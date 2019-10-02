@@ -144,6 +144,7 @@ if [ -x "$(command -v jx)" ]; then
 else
     curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
     echo "\nsource <(jx completion zsh)" >> ~/.zshrc
+    echo "\nexport PATH=$HOME/.jx/bin:$PATH" >> ~/.zshrc
 fi;
 
 # docker
