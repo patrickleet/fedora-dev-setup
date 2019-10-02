@@ -239,3 +239,10 @@ else
     chmod +x ~/Downloads/terraform/terraform
     sudo mv ~/Downloads/terraform/terraform /usr/bin/terraform
 fi;
+
+# postgres
+if [ -x "$(command -v pg_config)" ]; then
+    echo "postgresql installed"
+else
+    sudo dnf install postgresql -y
+fi;
