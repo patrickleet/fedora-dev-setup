@@ -160,13 +160,6 @@ else
     sudo dnf install docker-compose -y
 fi;
 
-# docker-compose
-if [ -x "$(command -v docker-compose)" ]; then
-    echo "docker-compose installed"
-else
-    sudo dnf install docker-compose -y
-fi;
-
 # lazydocker
 if [ -x "$(command -v lazydocker)" ]; then
     echo "lazydocker installed"
